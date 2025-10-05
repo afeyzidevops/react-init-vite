@@ -1,16 +1,14 @@
 
 
 const Main_list = ()=>{
+const menu_list=["داشبورد", "گزارشات" ,"نمودارها و ترندها" , "مشخصات فنی تجهیزات"  , "نقشه های تک خطی"] ;
    return(
     <ul>
-        <li>داشبورد</li>
-        <li>گزارشات</li>
-        <li>نمودارها و ترندها</li>
-        <li>مشخصات فنی تجهیزات</li>
-        <li>نقشه های تک خطی</li>
+       {menu_list.map((item) => {
+            return <li key={item}>{item}</li>
+       })}
     </ul>
    );
 };
-
 export default Main_list;
 
