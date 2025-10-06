@@ -5,13 +5,14 @@ const menu_list=["داشبورد", "گزارشات" ,"نمودارها و ترن
    // if (!menu_list.length) return <div>this is a empty list</div>
 const [selectedItem,setSelectedItem]=useState(0)   ;
 
+const handlerClick =(index)=>{
+   setSelectedItem(index);
+}
 
 const RenderList =() => {
     if (!menu_list.length) return <div>this list is empety</div>;
     return menu_list.map((item,index) =>(
-       <li onClick={()=>{
-        setSelectedItem(index);
-       }}
+       <li onClick={()=>handlerClick(index)}
        key={item} 
        className={selectedItem===index ? "selected-item" : "" }>{item}</li>
     )); 
