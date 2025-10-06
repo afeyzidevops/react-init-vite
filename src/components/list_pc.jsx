@@ -5,9 +5,9 @@ const menu_list=["داشبورد", "گزارشات" ,"نمودارها و ترن
    return(
       <>
       <h2>Menu bar</h2>
-      {!menu_list.length ? <div>This is empty list</div> : null}
+      {/* {!menu_list.length ? <div>This is empty list</div> : null} */}
       {/* use comprasion operators*/}
-      {/* {!menu_list.length && <div>this is list is empty</div>} */}
+      {!menu_list.length && <div>this is list is empty</div>}
     <ul>
        {menu_list.map((item) => {
             return <li key={item}>{item}</li>
