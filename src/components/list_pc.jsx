@@ -1,12 +1,19 @@
+import { useState } from "react";
+
 const Main_list = ()=>{
 const menu_list=["داشبورد", "گزارشات" ,"نمودارها و ترندها" , "مشخصات فنی تجهیزات"  , "نقشه های تک خطی"] ;
    // if (!menu_list.length) return <div>this is a empty list</div>
-   
+const [selectedItem,setSelectedItem]=useState(0)   ;
 
-   const RenderList =() => {
+
+const RenderList =() => {
     if (!menu_list.length) return <div>this list is empety</div>;
-    return menu_list.map((item) =>(
-       <li key={item}>{item}</li>
+    return menu_list.map((item,index) =>(
+       <li onClick={()=>{
+        setSelectedItem(index);
+       }}
+       key={item} 
+       className={selectedItem===index ? "selected-item" : "" }>{item}</li>
     )); 
    };
 
