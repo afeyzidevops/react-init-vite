@@ -8,8 +8,8 @@ const handlerClick =(index)=>{
 }
 
 const RenderList =() => {
-    if (!items.length) return <div>this list is empety</div>;
-    return items.map((item,index) =>(
+    if (!items?.length) return <div>this list is empety</div>;
+    return items?.map((item,index) =>(
        <li onClick={()=>handlerClick(index)}
        key={item} 
        className={selectedItem===index ? "selected-item" : "" }>{item}</li>
