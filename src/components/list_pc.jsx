@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-const Main_list = ()=>{
-const menu_list=["داشبورد", "گزارشات" ,"نمودارها و ترندها" , "مشخصات فنی تجهیزات"  , "نقشه های تک خطی"] ;
-   // if (!menu_list.length) return <div>this is a empty list</div>
+const Main_list = (probs)=>{
 const [selectedItem,setSelectedItem]=useState(0)   ;
 
 const handlerClick =(index)=>{
@@ -10,8 +8,8 @@ const handlerClick =(index)=>{
 }
 
 const RenderList =() => {
-    if (!menu_list.length) return <div>this list is empety</div>;
-    return menu_list.map((item,index) =>(
+    if (!probs.items.length) return <div>this list is empety</div>;
+    return probs.items.map((item,index) =>(
        <li onClick={()=>handlerClick(index)}
        key={item} 
        className={selectedItem===index ? "selected-item" : "" }>{item}</li>

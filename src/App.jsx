@@ -4,6 +4,9 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Main_list from './components/list_pc'
 
+const menu_list=["داشبورد", "گزارشات" ,"نمودارها و ترندها" , "مشخصات فنی تجهیزات"  , "نقشه های تک خطی"] ;
+
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -19,7 +22,7 @@ function App() {
         </a>
       </div>
       <h1>PSI + ARAS</h1>
-      <Main_list/>
+      <Main_list items={menu_list}/>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
