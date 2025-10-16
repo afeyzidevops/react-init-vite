@@ -2,13 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Main_list from './components/list_pc'
+import Main_list from './components/Main_menu_list'
+import Discription from './components/Project_Name_Discription'
 
 const menu_list=["داشبورد", "گزارشات" ,"نمودارها و ترندها" , "مشخصات فنی تجهیزات"  , "نقشه های تک خطی"] ;
-
+// const menu_list=[];
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -22,20 +22,13 @@ function App() {
         </a>
       </div>
       <h1>PSI + ARAS</h1>
+      <Discription/>
       <Main_list items={menu_list}/>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    
     </>
   )
 }
 
-export default App
+export default App;
+
+

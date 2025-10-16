@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 const Main_list = ({items})=>{
@@ -8,18 +9,23 @@ const handlerClick =(index)=>{
 }
 
 const RenderList =() => {
-    if (!items?.length) return <div>this list is empety</div>;
-    return items?.map((item,index) =>(
+   //  if (!items?.length) return <h3>This list is empty</h3>;
+    return( 
+      <>
+      {/* use ternery Perator insted use function direction in return in jsx */}
+      {!items.length && <h3>This list is empty</h3>  } 
+      {items?.map((item,index) =>(
        <li onClick={()=>handlerClick(index)}
-       key={item} 
+       key={item}
        className={selectedItem===index ? "selected-item" : "" }>{item}</li>
-    )); 
+    ))}
+     </>); 
    };
 
 
    return(
     <>
-        <h2>Menu bar</h2>
+        <h2>Main Menu</h2>
         <ul>
         {RenderList()}
         </ul>
